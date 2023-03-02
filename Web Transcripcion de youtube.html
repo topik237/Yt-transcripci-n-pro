@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Yt transcripción pro</title>
+    <style>
+      body {
+        background-color: #181818;
+        color: #fff;
+        font-family: Roboto, Arial, sans-serif;
+        font-size: 16px;
+        font-family: Arial, sans-serif;
+        text-align: center;
+        padding-top: 50px;
+      }
+
+      h1 {
+        margin-bottom: 20px;
+        font-size: 48px;
+  font-weight: bold;
+  background: linear-gradient(to right, #FF0000, #FFC0CB);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+        font-size: 36px;
+      }
+
+      u {
+  color: #C1C1C1;
+  font-size: 20px;
+  margin-top: 30px;
+  margin-bottom: 20px;
+      }
+
+
+      p {
+        font-size: 24px;
+        margin-bottom: 10px;
+      }
+
+      n {
+  color: #888888;
+  font-size: 16px;
+  margin-top: 30px;
+  margin-bottom: 20px;
+      }
+
+      n2 {
+  color: #888888;
+  font-size: 16px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+      }
+
+      u {
+  color: #C1C1C1;
+  font-size: 20px;
+  margin-top: 30px;
+  margin-bottom: 20px;
+      }
+
+      textarea {
+        font-size: 20px;
+        padding: 10px;
+        border-radius: 10px;
+        border: none;
+        box-shadow: 0 0 5px rgba(0,0,0,0.3);
+        margin-bottom: 20px;
+        resize: none;
+      }
+
+      button {
+        font-size: 24px;
+        padding: 10px 20px;
+  background: linear-gradient(to right, #BF2929, #F97575);
+        color: #fff;
+        border: none;
+        border-radius: 20px;
+        cursor: pointer;
+        box-shadow: 0 0 5px rgba(0,0,0,0.3);
+        transition: all 0.3s ease;
+  margin-bottom: 20px;
+      }
+
+      button:hover {
+        transform: scale(1.1);
+        box-shadow: 0 0 10px rgba(0,0,0,0.5);
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Yt transcripción pro</h1>
+<n2>Creado por Joaquín Filippa</n2>
+    <br>
+    <p>Ingresa la transcripción de origen:</p>
+    <textarea id="transcripcion" rows="10" cols="50"></textarea>
+    <br>
+    <button onclick="eliminarMarcas()">Convertir</button>
+    <br>
+    <p>Transcripción sin artefactos:</p>
+    <textarea id="transcripcionSinMarcas" rows="10" cols="50" readonly></textarea>
+    <br>
+    <button id="copy-button">Copiar al portapapeles</button>
+    <br>
+    <n>Prompt para arreglar puntiación en chat gpt: "Arregla esta precaria transcripción de un video de Youtube, necesito que corrijas la puntuación del texto. el texto resultante deberá estar en un formato legible, como un texto convencional. te adjunto la transcripción. " "<n>
+    <br>
+<u> Advertencia: Generalmente no funciona la corrección automatica de chatgpt en videos superiores a los 3:00m de duración.<u>
+    <script>
+function eliminarMarcas() {
+  let transcripcion = document.getElementById("transcripcion").value;
+let transcripcionSinMarcas = transcripcion.replace(/\[\S+\]|(\d+:\d+\s*)/g, "");
+  document.getElementById("transcripcionSinMarcas").value = transcripcionSinMarcas;
+}
+
+      const copyBtn = document.getElementById('copy-button');
+      const transcripcion = document.getElementById('transcripcionSinMarcas');
+
+      copyBtn.addEventListener('click', () => {
+        transcripcion.select();
+        document.execCommand('copy');
+      });
+    </script>
+  </body>
+</html>
